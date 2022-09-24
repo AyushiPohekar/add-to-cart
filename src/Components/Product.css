@@ -1,0 +1,63 @@
+.upperbar{
+    margin: 0 9%;
+   
+}
+/* .cart{
+    color: black;
+}
+.cartbadge{
+  color: black;
+} */
+
+.textCart{
+    padding: 0.8%;
+    color: black;
+    border:solid 2px black;
+    border-radius: 8px ;
+    width: 15%;
+}
+
+
+.Product{
+    margin: 5% 9%;
+}
+.ProductCard{
+    width: 80%;
+    margin-bottom: 40px;
+    height: 90%;
+}
+.Productimg{
+   margin-top: 0;
+    
+}
+.Productbadge{
+    position:absolute;
+    top: 0.5rem; 
+    right: 0.5rem
+}
+.producttitle{
+    font-weight: 700;
+    margin-bottom: 0;
+}
+.Producttext{
+    font-size: 0.9rem;
+    padding-bottom: 15%;
+}
+.Producttext1{
+    font-size: 0.9rem;
+    padding: 0;
+    margin-top: 0;
+}
+.stars{
+   
+    margin-top: 0;
+    padding-top: 0;
+}
+.Productspan{
+    padding: 0 1.5%;
+    text-decoration: line-through;
+}
+
+.Footer{
+    padding: 4%;
+}
