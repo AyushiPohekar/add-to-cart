@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Product.css";
 import Navbar from "./Navbar";
 
-export default function Product({ product, sale, handleClick, handleRemove }) {
-    
+export default function Product({ product, sale, handleClick, cart,setCart,id}) {
+    const handleRemove = (id) => {
+        console.log('id',id);
+        console.log('length before filter',cart.length);
+       
+        const arr = cart.filter((pr) => pr.id !== id)
+       
+        setCart(arr);
+        console.log('length after filter',cart.length);
+        console.log('handleRemove call');
+      };
+   
  return (
+    
     <div className="col-xl-3 col-lg-4 col-md-4 col-sm-6">
       <div className="card ProductCard">
         {sale && (
@@ -35,10 +46,12 @@ export default function Product({ product, sale, handleClick, handleRemove }) {
                 <span style={{ color: "green" }} onClick={() => handleChange(product, 1)}>Add to cart</span>
               )}
               </a>  */}
+            
           {product.AddedCart ? (
             <a
               type="button"
               class="btn btn-outline-dark"
+             
               href="#"
               onClick={() => handleClick(product)}
             >
@@ -48,14 +61,19 @@ export default function Product({ product, sale, handleClick, handleRemove }) {
             <a
               type="button"
               class="btn btn-outline-dark"
+              id={'btn'+id}
               href="#"
-              onClick={() => handleRemove(product.id)}
+            
+              onClick={() => handleRemove(id)}
             >
               Remove from cart
             </a>
+             
           )}
+      
         </div>
       </div>
+  
     </div>
   );
 }
