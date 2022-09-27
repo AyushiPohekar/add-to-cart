@@ -94,30 +94,13 @@ function App() {
     },
   ];
 
-  const [show, setShow] = useState(true);
   const [cart, setCart] = useState([]);
   const handleClick = (product) => {
     setCart([...cart, product]);
-    console.log('handleAdd call');
   };
-  // const handleChange = (item, d) => {
-  //   const ind = cart.indexOf(item);
-  //   const arr = cart;
-  //   arr[ind].price += d;
 
-  //   if (arr[ind].price === 0) arr[ind].price = 1;
-  //   setCart([...arr]);
-  // };
-  // const handleRemove = (id) => {
-  //   console.log('length before filter',cart.length);
-   
-  //   const arr = cart.filter((product) => product.id !== id);
-  //   setCart(arr);
-  //   console.log('length after filter',cart.length);
-  //   console.log('handleRemove call');
-  // };
   const size = cart.length;
-  console.log('cart',cart);
+
   console.log(size);
 
   return (
@@ -128,13 +111,13 @@ function App() {
         <div className="row">
           {data.map((pr) => (
             <Product
-            key={pr.id}
-            id={pr.id}
+              key={pr.id}
+              id={pr.id}
               product={pr}
               sale={pr.sale}
               handleClick={handleClick}
-             cart={cart}
-             setCart={setCart}
+              cart={cart}
+              setCart={setCart}
             />
           ))}
         </div>
