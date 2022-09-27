@@ -74,7 +74,9 @@ export default function Navbar({size}) {
             </div>
             {/* <span className="navbar-text">Navbar text with an inline element</span> */}
           </div>
+          
         </div>
+        
       </nav>
     </div>
   );

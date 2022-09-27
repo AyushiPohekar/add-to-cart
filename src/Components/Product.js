@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Product.css";
 import Navbar from "./Navbar";
+import { isDisabled } from "@testing-library/user-event/dist/utils";
 
 export default function Product({
   product,
@@ -9,10 +10,18 @@ export default function Product({
   cart,
   setCart,
   id,
+  
 }) {
-  const handleRemove = (id) => {
-    const arr = () => cart.filter((pr) => pr.id !== id);
+
+    
+ 
+const handleRemove = (id) => {
+   const arr = () => cart.filter((pr) => pr.id !== id);
     setCart(arr);
+    document.getElementById("btn"+id).disabled=true;
+    document.getElementById("btn"+id).style.opacity = "0.5";
+    document.getElementById("btnadd"+id).disabled=false;
+    document.getElementById("btnadd"+id).style.opacity = "1";
   };
 
   return (
@@ -41,19 +50,21 @@ export default function Product({
           <a
             type="button"
             class="btn btn-outline-dark"
+            id={"btnadd"+id}
             href="#"
-            style={{ color: "green", fontWeight: "bold", marginBottom: 10 }}
-            onClick={() => handleClick(product)}
+         
+            style={{ color: "green", fontWeight: "bold", marginBottom: 10 }} 
+            onClick={() => handleClick(product,id)}
           >
             Add to Cart
           </a>
           <a
             type="button"
             class="btn btn-outline-dark"
-            id={"btn" + id}
+            id={"btn"+id}
             href="#"
             style={{ color: "red", fontWeight: "bold", marginBottom: 10 }}
-            onClick={() => handleRemove(id)}
+            onClick={() =>  handleRemove(id)}
           >
             Remove from cart
           </a>

@@ -13,11 +13,8 @@
     display: flex;
     justify-content: space-around;
 }
-
-
-
 .ProductCard{
-    width: 100%;
+    width: 90%;
     margin-bottom: 40px;
     height: 90%;
 }
@@ -55,4 +52,5 @@
 
 .Footer{
     padding: 4%;
+    text-align: center;
 }
